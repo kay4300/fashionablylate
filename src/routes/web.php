@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FashionController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +19,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/', [FashionController::class, 'index']);
+Route::post('/confirm', [FashionController::class, 'confirm']);
+Route::get('/thanks', [FashionController::class, 'thanks']);
+Route::get('/admin', [AdminController::class, 'admin']);
+Route::post('/register', [RegisterController::class, 'register']);
+Route::post('/login', [RegisterController::class, 'login']);
