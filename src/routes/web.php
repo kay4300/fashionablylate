@@ -1,9 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\FashionController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\LoginController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -20,9 +22,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/', [FashionController::class, 'index']);
-Route::post('/confirm', [FashionController::class, 'confirm']);
-Route::get('/thanks', [FashionController::class, 'thanks']);
-Route::get('/admin', [AdminController::class, 'admin']);
-Route::post('/register', [RegisterController::class, 'register']);
-Route::post('/login', [RegisterController::class, 'login']);
+Route::get('/', [ContactController::class, 'index']);
+Route::post('/confirm', [ContactController::class, 'confirm']);
+Route::get('/thanks', [ContactController::class, 'thanks']);
+
+Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+
+Route::get('/login', [LoginController::class, 'index'])->name('login.index');
+Route::get('/register', [RegisterController::class, 'index'])->name('register.index');

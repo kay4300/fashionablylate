@@ -3,64 +3,84 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>FashionablyLate - Register</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FashionablyLate</title>
+    <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/register.css') }}" />
 </head>
 
 <body>
-    <!-- Top bar -->
-    <header class="topbar" aria-label="Site header">
-        <div class="brand">FashionablyLate</div>
-        <a href="#" class="login-link">login</a>
+    <header class="header">
+        <div class="header__inner">
+            <a class="header__logo" href="/">
+                FashionablyLate
+            </a>
+            <div class="header__login">
+                <!-- ヘッダーの「Login」ボタンを押すと /login にアクセスし、
+LoginController@index が呼ばれて login.blade.php が表示
+ -->
+                <a href="{{ route('login.index') }}" class="header__login-link">Login</a>
+            </div>
+        </div>
     </header>
 
-    <!-- Centered registration card -->
-    <main class="page">
-        <section class="card" aria-label="Registration">
-            <h1 class="title">Register</h1>
-
-            <form class=form action="/register" method="post">
+    <main>
+        <div class="register-form__content">
+            <div class="register-form__heading">
+                <h2>Register</h2>
+            </div>
+            <!-- action="/register"→登録処理用のルートに送信 -->
+            <form class="form" method="post" action="/register">
                 @csrf
-                <div class="field">
-                    <label for="name" class="label">お名前</label>
-                    <input
-                        id="name"
-                        name="name"
-                        type="text"
-                        class="input"
-                        placeholder="例: 山田　太郎"
-                        autocomplete="name"
-                        required />
+                <div class="form__group">
+                    <div class="form__group-title">
+                        <span class="form__label--item">お名前</span>
+
+                    </div>
+                    <div class="form__group-content">
+                        <div class="form__input--text">
+                            <input type="text" name="name" placeholder="例：山田　太郎" />
+                        </div>
+                        <div class="form__error">
+                            <!--バリデーション機能を実装したら記述します。-->
+                        </div>
+                    </div>
+                </div>
+                <div class="form__group">
+                    <div class="form__group-title">
+                        <span class="form__label--item">メールアドレス</span>
+
+                    </div>
+                    <div class="form__group-content">
+                        <div class="form__input--text">
+                            <input type="email" name="email" placeholder="例　test@example.com" />
+                        </div>
+                        <div class="form__error">
+                            <!--バリデーション機能を実装したら記述します。-->
+                        </div>
+                    </div>
+                </div>
+                <div class="form__group">
+                    <div class="form__group-title">
+                        <span class="form__label--item">パスワード</span>
+
+                    </div>
+                    <div class="form__group-content">
+                        <div class="form__input--text">
+                            <input type="tel" name="password" placeholder="xxxxxxxx" />
+                        </div>
+                        <div class="form__error">
+                            <!--バリデーション機能を実装したら記述します。-->
+                        </div>
+                    </div>
                 </div>
 
-                <div class="field">
-                    <label for="email" class="label">メールアドレス</label>
-                    <input
-                        id="email"
-                        name="email"
-                        type="email"
-                        class="input"
-                        placeholder="例: test@example.com"
-                        autocomplete="email"
-                        required />
+                <div class="form__button">
+                    <button class="form__button-submit" type="submit">登録</button>
                 </div>
-
-                <div class="field">
-                    <label for="password" class="label">パスワード</label>
-                    <input
-                        id="password"
-                        name="password"
-                        type="password"
-                        class="input"
-                        placeholder="例: coachtechno6"
-                        autocomplete="new-password"
-                        required />
-                </div>
-
-                <button type="submit" class="submit">登録</button>
             </form>
-        </section>
+        </div>
     </main>
 </body>
 
