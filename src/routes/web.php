@@ -28,5 +28,5 @@ Route::get('/thanks', [ContactController::class, 'thanks']);
 
 Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
 
-Route::get('/login', [LoginController::class, 'index'])->name('login.index');
-Route::get('/register', [RegisterController::class, 'index'])->name('register.index');
+Route::post('/login', [LoginController::class, 'login']);
+Route::post('/register', [RegisterController::class, 'register']);

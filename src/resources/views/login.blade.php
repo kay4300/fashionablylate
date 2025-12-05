@@ -28,17 +28,19 @@
             <div class="contact-form__heading">
                 <h2>Login</h2>
             </div>
-            <form class="form">
+            <form class="form" method="post" action="/login">
                 <div class="form__group">
                     <div class="form__group-title">
                         <span class="form__label--item">メールアドレス</span>
                     </div>
                     <div class="form__group-content">
                         <div class="form__input--text">
-                            <input type="email" name="email" placeholder="test@example.com" />
+                            <input type="email" name="email" placeholder="test@example.com" value="{{ old('email') }}"/>
                         </div>
                         <div class="form__error">
-                            <!--バリデーション機能を実装したら記述します。-->
+                            @error('email')
+                            {{ $message }}
+                            @enderror
                         </div>
                     </div>
                 </div>
@@ -51,7 +53,9 @@
                             <input type="tel" name="password" placeholder="xxxxxxxx" />
                         </div>
                         <div class="form__error">
-                            <!--バリデーション機能を実装したら記述します。-->
+                            @error('password')
+                            {{ $message }}
+                            @enderror
                         </div>
                     </div>
                 </div>

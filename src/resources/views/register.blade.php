@@ -43,7 +43,9 @@ LoginController@index が呼ばれて login.blade.php が表示
                             <input type="text" name="name" placeholder="例：山田　太郎" />
                         </div>
                         <div class="form__error">
-                            <!--バリデーション機能を実装したら記述します。-->
+                            @error('name')
+                            {{ $message}}
+                            @enderror
                         </div>
                     </div>
                 </div>
@@ -57,7 +59,9 @@ LoginController@index が呼ばれて login.blade.php が表示
                             <input type="email" name="email" placeholder="例　test@example.com" />
                         </div>
                         <div class="form__error">
-                            <!--バリデーション機能を実装したら記述します。-->
+                            @error('email')
+                            {{ $message}}
+                            @enderror
                         </div>
                     </div>
                 </div>
@@ -69,9 +73,6 @@ LoginController@index が呼ばれて login.blade.php が表示
                     <div class="form__group-content">
                         <div class="form__input--text">
                             <input type="tel" name="password" placeholder="xxxxxxxx" />
-                        </div>
-                        <div class="form__error">
-                            <!--バリデーション機能を実装したら記述します。-->
                         </div>
                     </div>
                 </div>
