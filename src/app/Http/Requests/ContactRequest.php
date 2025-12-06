@@ -26,7 +26,7 @@ class ContactRequest extends FormRequest
         return [
             "last_name" => ["required", "string", "max:8"],
             "first_name" => ["required", "string", "max:8"],
-            "gender" => ["required"],
+            "gender" => ["required, in:1,2,3"],
             "email" => ["required", "string", "email"],
             "tel" => ["required", "string", "digits_between:10,11"],
             "address" => ["required"],

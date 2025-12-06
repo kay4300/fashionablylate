@@ -22,11 +22,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/', [ContactController::class, 'index']);
-Route::post('/confirm', [ContactController::class, 'confirm']);
-Route::get('/thanks', [ContactController::class, 'thanks']);
+Route::get('/', [ContactController::class, 'index'])->name('index');
+Route::post('/confirm', [ContactController::class, 'confirm'])->name('confirm');
+// 送信・修正ボタン用
+Route::post('/', [ContactController::class, 'send'])->name('confirm.send');
+Route::get('/thanks', [ContactController::class, 'thanks'])->name('thanks');
+
+
 
 Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
 
 Route::post('/login', [LoginController::class, 'login']);
 Route::post('/register', [RegisterController::class, 'register']);
+
