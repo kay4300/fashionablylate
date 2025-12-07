@@ -79,7 +79,8 @@
                         <tr class="confirm-table__row">
                             <th class="confirm-table__header">建物名</th>
                             <td class="confirm-table__text">
-                                <input type="text" name="building" value="{{ $contact['building'] }}" readonly />
+                                <input type="text" name="building" value="{{ $contact['building'] ?? '' }}" readonly />
+                                <p>{{ $contact['building'] ?? '' }}</p>
                             </td>
                         </tr>
                         <tr class="confirm-table__row">
@@ -100,14 +101,14 @@
                         </tr>
                     </table>
                 </div>
-                
-            <form class="form" method="post" action="{{ route('confirm.send') }}">
-                @csrf
-                <div class="form__button">
-                    <button type="submit" name="action" value="send" class="form__button-submit">送信</button>
-                    <button type="submit" name="action" value="edit" class="form__button-submit">修正</button>
-                </div>
-            </form>
+
+                <form class="form" method="post" action="{{ route('confirm.send') }}">
+                    @csrf
+                    <div class="form__button">
+                        <button type="submit" name="action" value="send" class="form__button-submit">送信</button>
+                        <button type="submit" name="action" value="edit" class="form__button-submit">修正</button>
+                    </div>
+                </form>
         </div>
     </main>
 </body>

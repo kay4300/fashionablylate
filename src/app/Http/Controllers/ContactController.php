@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\ContactRequest;
 use App\Models\Category;
 use App\Models\Contact;
 
@@ -14,14 +15,19 @@ class ContactController extends Controller
         return view('index', compact('categories'));
     }
     //フォーム入力画面から確認画面へ値を渡しviewで表示する
-    public function confirm(Request $request)
+    public function confirm(ContactRequest $request)
     {
         // 入力値をすべて取得
-        $contact = $request->all();
+        // $contact = $request->all();
+
+        // バリデーション済みのデータを取得
+        $contact = $request->validated();
+
         // 電話番号を結合して 'tel' キーを作成
         $contact['tel'] = ($contact['tel1'] ?? '') . '-' . ($contact['tel2'] ?? '') . '-' . ($contact['tel3'] ?? '');
+        $contact['building'] = $request->input('building', '');
 
-        $data['gender'] = (int)$data['gender'];
+        $data['gender'] = (int)$contact['gender'];
 
         // セッションに保存、修正ボタンを押したときに使用
         $request->session()->put('contact', $contact);
@@ -39,17 +45,20 @@ class ContactController extends Controller
         return view('confirm', compact('contact', 'gender', 'category'));
     }
     // 確認画面から完了画面へ値を渡しviewで表示する
-    public function send(Request $request)
+    public function send(ContactRequest $request)
     {
         $action = $request->input('action');
         $contactData = $request->session()->get('contact');
 
         if ($action === 'edit') {
             // 修正ボタン → 入力画面に戻る
-            return redirect('/')->withInput($contactData);
+            return redirect('index')->withInput($contactData);
         }
-
-        if ($contactData) {
+        if ($action === 'send' && $contactData) {
+            // 送信ボタン → DB保存
+            Contact::create($contactData);
+        }        
+            if ($contactData) {
             // 送信ボタン → DB保存
             Contact::create($contactData);
 

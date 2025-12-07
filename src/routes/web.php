@@ -25,7 +25,7 @@ Route::get('/', function () {
 Route::get('/', [ContactController::class, 'index'])->name('index');
 Route::post('/confirm', [ContactController::class, 'confirm'])->name('confirm');
 // 送信・修正ボタン用
-Route::post('/', [ContactController::class, 'send'])->name('confirm.send');
+Route::post('/send', [ContactController::class, 'send'])->name('confirm.send');
 Route::get('/thanks', [ContactController::class, 'thanks'])->name('thanks');
 
 

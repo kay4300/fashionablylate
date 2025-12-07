@@ -57,14 +57,16 @@
                     <div class="form__group-content">
                         <div class="form__input--radio">
                             <label>
-                                <input type="radio" name="gender" value="1" {{ old('gender') == '1' ? 'checked' : ' ' }} >男性
+                                <input type="radio" name="gender" value="1" {{ old('gender') == '1' ? 'checked' : '' }}>
+                                男性
                             </label>
                             <label>
-                                <input type="radio" name="gender" value="2" {{ old('gender') == '2' ? 'checked' : ' ' }} >女性 
-                
+                                <input type="radio" name="gender" value="1" {{ old('gender') == '2' ? 'checked' : '' }}>
+                                女性
                             </label>
                             <label>
-                                <input type="radio" name="gender" value="3" {{ old('gender') == '3' ? 'checked' : ' ' }} >その他
+                                <input type="radio" name="gender" value="1" {{ old('gender') == '3' ? 'checked' : '' }}>
+                                その他
                             </label>
                         </div>
                         <div class="form__error">
@@ -142,40 +144,39 @@
                     <div class="form__group-title">
                         <span class="form__label--item">お問い合わせの種類</span>
                         <span class="form__label--required">*</span>
-                    </div>    
-                        <div class="form__group-content">
-                            <div class="form__input--select">
-                                <select name="category_id">
-                                    <option value="">選択してください</option>
-                                    @foreach($categories as $category)
-                                    <option value="{{ $category->id }}">{{ $category->content }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form__error">
-                            @error('category_id')
-                            <div class="form__error">{{ $message }}</div>
-                            @enderror
-
+                    </div>
+                    <div class="form__group-content">
+                        <div class="form__input--select">
+                            <select name="category_id">
+                                <option value="">選択してください</option>
+                                @foreach($categories as $category)
+                                <option value="{{ $category->id }}" {{ old('category_id') == $category->id ? 'selected' : '' }}>
+                                    {{ $category->content }}</option>
+                                @endforeach
+                            </select>
                         </div>
                     </div>
-        </div>
-
-        <div class="form__group">
-            <div class="form__group-title">
-                <span class="form__label--item">お問い合わせ内容</span>
-            </div>
-            <div class="form__group-content">
-                <div class="form__input--textarea">
-                    <textarea name="detail" placeholder="お問い合わせ内容を記入ください"></textarea>
+                    <div class="form__error">
+                        @error('category_id')
+                        <div class="form__error">{{ $message }}</div>
+                        @enderror
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="form__button">
-            <button class="form__button-submit" type="submit">確認画面</button>
-        </div>
-        </form>
+                <div class="form__group">
+                    <div class="form__group-title">
+                        <span class="form__label--item">お問い合わせ内容</span>
+                    </div>
+                    <div class="form__group-content">
+                        <div class="form__input--textarea">
+                            <textarea name="detail" placeholder="お問い合わせ内容を記入ください">{{ old('detail') }}</textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form__button">
+                    <button class="form__button-submit" type="submit">確認画面</button>
+                </div>
+            </form>
         </div>
     </main>
 </body>
