@@ -2,7 +2,7 @@
 
 ## *環境構築*
 ### Dockerビルド  
-1.git clone リンクはる  
+1.git clone: git@github.com:kay4300/fashionablylate.git  
 2.docker compose up -d --build  
 ＊MySQLはOSによってきどうしないばあいがあるのでそれぞれのPCに合わせてdocker-compose.ymlファイルを編集してください。  
 
