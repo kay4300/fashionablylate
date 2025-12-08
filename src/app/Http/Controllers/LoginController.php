@@ -11,9 +11,12 @@ class LoginController extends Controller
     {
         return view('/login'); 
     }
-    
-    public function login()
+    // ログイン処理
+    public function login(LoginRequest $request)
     {
-        return view('/admin');
+        // バリデーション済みデータの取得
+        $validated = $request->validated();
+
+        return redirect()->route('admin');
     }
 }

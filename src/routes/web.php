@@ -6,7 +6,6 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,13 +24,28 @@ Route::get('/', function () {
 Route::get('/', [ContactController::class, 'index'])->name('index');
 Route::post('/confirm', [ContactController::class, 'confirm'])->name('confirm');
 // 送信・修正ボタン用
+// Route::get('/send', [ContactController::class, 'send'])->name('confirm.send');
 Route::post('/send', [ContactController::class, 'send'])->name('confirm.send');
 Route::get('/thanks', [ContactController::class, 'thanks'])->name('thanks');
 
-
-
 Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
 
-Route::post('/login', [LoginController::class, 'login']);
-Route::post('/register', [RegisterController::class, 'register']);
 
+// ログイン画面表示
+Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login.index');
+// ログイン処理
+Route::post('/login', [LoginController::class, 'login']);
+// register画面表示
+Route::get('/register', function () {
+    return view('register');
+})->name('register');
+
+// ログイン後の管理者画面
+// Route::get('/admin', function () {
+//     return view('admin');
+// })->name('admin');
+
+// register画面へ遷移
+Route::get('/register', function () {
+    return view('register');
+})->name('register');

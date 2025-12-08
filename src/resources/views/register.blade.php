@@ -68,11 +68,20 @@ LoginController@index が呼ばれて login.blade.php が表示
                 <div class="form__group">
                     <div class="form__group-title">
                         <span class="form__label--item">パスワード</span>
-
                     </div>
                     <div class="form__group-content">
                         <div class="form__input--text">
-                            <input type="tel" name="password" placeholder="xxxxxxxx" />
+                            <input type="password" name="password" placeholder="xxxxxxxx" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form__group">
+                    <div class="form__group-title">
+                        <span class="form__label--item">パスワード確認</span>
+                    </div>
+                    <div class="form__group-content">
+                        <div class="form__input--text">
+                            <input type="password" name="password_confirmation" placeholder="xxxxxxxx" />
                         </div>
                     </div>
                 </div>

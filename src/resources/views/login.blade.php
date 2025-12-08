@@ -29,6 +29,7 @@
                 <h2>Login</h2>
             </div>
             <form class="form" method="post" action="/login">
+                @csrf
                 <div class="form__group">
                     <div class="form__group-title">
                         <span class="form__label--item">メールアドレス</span>
@@ -50,7 +51,7 @@
                     </div>
                     <div class="form__group-content">
                         <div class="form__input--text">
-                            <input type="tel" name="password" placeholder="xxxxxxxx" />
+                            <input type="password" name="password" placeholder="xxxxxxxx" />
                         </div>
                         <div class="form__error">
                             @error('password')

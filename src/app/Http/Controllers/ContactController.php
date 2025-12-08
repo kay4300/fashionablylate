@@ -33,50 +33,52 @@ class ContactController extends Controller
         $request->session()->put('contact', $contact);
 
         // gender もビューに渡す
-        $gender = $contact['gender'] ?? '';
+        $genderText = [
+            1 => '男性',
+            2 => '女性',
+            3 => 'その他',
+        ][$contact['gender'] ?? 0];
+
 
         // categoryを取得（例: Categoryモデルを使用してIDから取得）
         $category = null;
         if (!empty($contact['category_id'])) {
-            $category = \App\Models\Category::find($contact['category_id']);
+            $category = Category::find($contact['category_id']);
+            $categoryText = $category ? $category->content : '未選択';
+        } else {
+            $categoryText = '未選択';
         }
 
         // 確認画面に入力値を表示
-        return view('confirm', compact('contact', 'gender', 'category'));
+        return view('confirm', compact('contact', 'genderText', 'categoryText'));
     }
     // 確認画面から完了画面へ値を渡しviewで表示する
     public function send(ContactRequest $request)
     {
         $action = $request->input('action');
         $contactData = $request->session()->get('contact');
-
+        if (!$contactData) {
+            return redirect('/')->with('error', 'セッションデータがありません');
+        }
         if ($action === 'edit') {
             // 修正ボタン → 入力画面に戻る
-            return redirect('index')->withInput($contactData);
+            return redirect()->route('index')->withInput($contactData);
         }
-        if ($action === 'send' && $contactData) {
-            // 送信ボタン → DB保存
-            Contact::create($contactData);
-        }        
-            if ($contactData) {
-            // 送信ボタン → DB保存
-            Contact::create($contactData);
+        // 送信ボタン → DB保存
+        if ($action === 'send') {
+            $contactData['tel'] = ($contactData['tel1'] ?? '') . '-' . ($contactData['tel2'] ?? '') . '-' . ($contactData['tel3'] ?? '');
 
-            // セッション削除
-            $request->session()->forget('contact');
-
-            return redirect('/thanks');
+            Contact::create($contactData);
         }
 
-        return redirect('/')->with('error', 'セッションデータがありません');
-    // $contact = $request->all();
-    // // DBへの保存
-    // Contact::create($contact);
-    // return view('thanks');
+        // セッション削除
+        $request->session()->forget('contact');
+
+        return redirect()->route('thanks');
     }
+
     public function thanks()
     {
         return view('thanks');
     }
-    
 }
