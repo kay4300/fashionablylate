@@ -25,7 +25,7 @@ Route::get('/', [ContactController::class, 'index'])->name('index');
 Route::post('/confirm', [ContactController::class, 'confirm'])->name('confirm');
 // 送信・修正ボタン用
 // Route::get('/send', [ContactController::class, 'send'])->name('confirm.send');
-Route::post('/send', [ContactController::class, 'send'])->name('confirm.send');
+Route::post('/confirm/send', [ContactController::class, 'send'])->name('confirm.send');
 Route::get('/thanks', [ContactController::class, 'thanks'])->name('thanks');
 
 Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
@@ -41,11 +41,7 @@ Route::get('/register', function () {
 })->name('register');
 
 // ログイン後の管理者画面
-// Route::get('/admin', function () {
-//     return view('admin');
-// })->name('admin');
+Route::get('/admin', function () {
+    return view('admin');
+})->name('admin');
 
-// register画面へ遷移
-Route::get('/register', function () {
-    return view('register');
-})->name('register');

@@ -24,7 +24,7 @@
             <div class="confirm__heading">
                 <h2>confirm</h2>
             </div>
-            <form class="form" method=post action="{{ route('confirm.send') }}">
+            <form class="form" method="post" action="{{ route('confirm.send') }}">
                 @csrf
                 <div class="confirm-table">
                     <table class="confirm-table__inner">
@@ -82,8 +82,8 @@
 
                 <div class="form__button">
                     <button type="submit" name="action" value="send" class="form__button-submit">送信</button>
-                    <a href="{{ route('index') }}" class="form__button-submit">修正</a>
-                    <!-- <button type="submit" name="action" value="edit" class="form__button-submit">修正</button> -->
+                    <button type="submit" name="action" value="edit" class="form__button-submit">修正</button>
+                    <!-- <a href="{{ route('index') }}" class="form__button-submit">修正</a> -->
                 </div>
             </form>
         </div>
