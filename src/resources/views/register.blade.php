@@ -17,8 +17,7 @@
                 FashionablyLate
             </a>
             <div class="header__login">
-                <!-- ヘッダーの「Login」ボタンを押すと /login にアクセスし、
-LoginController@index が呼ばれて login.blade.php が表示
+                <!-- ヘッダーの「Login」ボタンを押すと /login にアクセスし、LoginController@index が呼ばれて login.blade.php が表示
  -->
                 <a href="{{ route('login.index') }}" class="header__login-link">Login</a>
             </div>
@@ -40,7 +39,7 @@ LoginController@index が呼ばれて login.blade.php が表示
                     </div>
                     <div class="form__group-content">
                         <div class="form__input--text">
-                            <input type="text" name="name" placeholder="例：山田　太郎" />
+                            <input type="text" name="name" placeholder="例：山田 太郎" />
                         </div>
                         <div class="form__error">
                             @error('name')
@@ -56,7 +55,7 @@ LoginController@index が呼ばれて login.blade.php が表示
                     </div>
                     <div class="form__group-content">
                         <div class="form__input--text">
-                            <input type="email" name="email" placeholder="例　test@example.com" />
+                            <input type="email" name="email" placeholder="例 test@example.com" />
                         </div>
                         <div class="form__error">
                             @error('email')

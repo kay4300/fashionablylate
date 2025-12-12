@@ -1,0 +1,91 @@
+/* 全体 */
+body {
+    font-family: "Times New Roman", serif;
+    color: #6b5b50;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* ヘッダー */
+.header__logo {
+    font-size: 32px;
+    color: #6b5b50;
+    text-decoration: none;
+}
+
+/* 見出し */
+.confirm__heading h2 {
+    font-size: 26px;
+    font-weight: normal;
+    margin: 40px 0;
+    text-transform: capitalize;
+}
+
+/* テーブル */
+.confirm-table {
+    font-family: inika;
+    width: 70%;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.confirm-table__inner {
+    width: 100%;
+    border: 1px solid #e5e0dd;
+    border-collapse: collapse;
+}
+
+.confirm-table__header {
+    width: 30%;
+    background-color: #d9cbc0;
+    color: #ffffff;
+    padding: 14px 20px;
+    text-align: left;
+    font-size: 15px;
+    font-weight: normal;
+}
+
+.confirm-table__text {
+    background-color: #ffffff;
+    color: #6b5b50;
+    padding: 14px 20px;
+    text-align: left;
+    font-size: 15px;
+}
+
+/* 表示専用の input */
+.confirm-table__text input {
+    background: none !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    color: #6b5b50 !important;
+    width: 100%;
+    font-size: 15px;
+    pointer-events: none;
+}
+
+/* ボタン */
+.form__button {
+    text-align: center;
+    margin: 40px 0 60px;
+}
+
+.form__button-submit {
+    font-size: 15px;
+    padding: 10px 35px;
+    margin: 0 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    background-color: #6b5b50;
+    color: #ffffff;
+}
+
+.form__button-submit:last-child {
+    background-color: transparent;
+    color: #6b5b50;
+    text-decoration: underline;
+}

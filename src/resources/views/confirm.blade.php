@@ -83,7 +83,9 @@
                 <div class="form__button">
                     <button type="submit" name="action" value="send" class="form__button-submit">送信</button>
                     <button type="submit" name="action" value="edit" class="form__button-submit">修正</button>
-                    <!-- <a href="{{ route('index') }}" class="form__button-submit">修正</a> -->
+                <!-- <div class="confirm-form__btn-inner">
+                    <input class="confirm-form__send-btn btn" type="submit" value="送信" name="send">
+                    <input class="confirm-form__back-btn" type="submit" value="修正" name="back"> -->
                 </div>
             </form>
         </div>

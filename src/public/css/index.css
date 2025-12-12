@@ -1,13 +1,13 @@
 /* 全体の基本設定 */
 body {
-    font-family: "Helvetica Neue", "Arial", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+    font-family: "Times New Roman", sans-serif;
     background: #ffffff;
     color: #6b5c52;
     margin: 0;
     padding: 0;
 }
 
-/* Header */
+/* ヘッダー */
 .header {
     width: 100%;
     padding: 20px 0;
@@ -17,6 +17,7 @@ body {
 }
 
 .header__logo {
+    font-family: "Times New Roman", sans-serif;
     font-size: 28px;
     font-weight: 300;
     text-decoration: none;
@@ -32,6 +33,7 @@ body {
 }
 
 .contact-form__heading h2 {
+    font-family: "Times New Roman", sans-serif;
     text-align: center;
     color: #6b5c52;
     font-size: 28px;
@@ -49,6 +51,7 @@ body {
 }
 
 .form__group-title {
+    font-family: "Times New Roman", sans-serif;
     width: 30%;
     font-size: 14px;
     color: #6b5c52;
@@ -61,6 +64,7 @@ body {
 }
 
 .form__label--required {
+    font-family: "Times New Roman", sans-serif;
     color: #c56a5a;
     font-size: 14px;
 }
@@ -83,6 +87,7 @@ select {
     /* 高さを固定 */
     padding: 0 14px;
     /* 縦は高さに合わせて0に調整 */
+    font-family: "Times New Roman", sans-serif;
     font-size: 14px;
     border: 1px solid #e8e2dc;
     background: #f9f7f5;
@@ -96,6 +101,7 @@ select {
     max-width: 100%;
     height: 150px;
     padding: 12px 14px;
+    font-family: "Times New Roman", sans-serif;
     font-size: 14px;
     border: 1px solid #e8e2dc;
     background: #f9f7f5;
@@ -148,6 +154,7 @@ select {
 /* エラー表示 */
 .form__error {
     color: #c56a5a;
+    font-family: "Times New Roman", sans-serif;
     font-size: 12px;
     margin-top: 4px;
 }
