@@ -6,6 +6,8 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 
+use App\Models\Category;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,25 +24,28 @@ Route::get('/', function () {
 });
 
 Route::get('/', [ContactController::class, 'index'])->name('index');
+Route::get('/confirm', [ContactController::class, 'confirm'])->name('confirm');
 Route::post('/confirm', [ContactController::class, 'confirm'])->name('confirm');
 // 送信・修正ボタン用
-Route::post('/confirm/send', [ContactController::class, 'send'])->name('confirm.send');
+// Route::get('/confirm/send', [ContactController::class, 'send'])->name('confirm.send');
+// Route::post('/confirm/send', [ContactController::class, 'send'])->name('confirm.send');
 Route::get('/thanks', [ContactController::class, 'thanks'])->name('thanks');
-
-Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
-
 
 // ログイン画面表示
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login.index');
 // ログイン処理
-Route::post('/login', [LoginController::class, 'login']);
+Route::post('/login', [LoginController::class, 'login'])->name('login');
 // register画面表示
-Route::get('/register', function () {
-    return view('register');
-})->name('register');
+Route::get('/register', [RegisterController::class, 'show'])
+    ->name('register');
+// Route::get('/register', function () {
+//     return view('register');
+// })->name('register');
+
+Route::get('/admin', [AdminController::class, 'index'])->name('admin');
 
 // ログイン後の管理者画面
-Route::get('/admin', function () {
-    return view('admin');
-})->name('admin');
-
+// Route::get('/admin', function () {
+//     $categories = Category::all();
+//     return view('admin');
+// })->name('admin', compact('categories'));

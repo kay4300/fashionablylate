@@ -89,7 +89,7 @@
                 <!-- ボタン -->
                 <div class="form__button">
                     <button class="form__button-submit" type="submit">検索</button>
-                    <a class="form__button-submit" href="/admin">リセット</a>
+                    <a class="form__button-submit" href="{{ route('admin') }}">リセット</a>
                 </div>
 
             </form>
@@ -103,7 +103,7 @@
 
             <!-- ページ番号（上） -->
             <div class="pagination">
-                {{ $contacts->links('vendor.pagination.custom') }}
+                {{ $contacts->links() }}
             </div>
 
             <!-- テーブル -->
@@ -118,7 +118,7 @@
 
                 @foreach($contacts as $contact)
                 <tr class="admin-table__row">
-                    <td>{{ $contact->last_name }}　{{ $contact->first_name }}</td>
+                    <td>{{ $contact->last_name }} {{ $contact->first_name }}</td>
                     <td>
                         @if($contact->gender == 1) 男性
                         @elseif($contact->gender == 2) 女性
@@ -136,7 +136,7 @@
 
             <!-- ページ番号（下） -->
             <div class="pagination">
-                {{ $contacts->links('vendor.pagination.custom') }}
+                {{ $contacts->links() }}
             </div>
 
         </div>
