@@ -1,0 +1,211 @@
+/* フォント */
+body {
+    font-family: 'Hiragino Kaku Gothic Pro', Meiryo, sans-serif;
+    background: #fff;
+    color: #776654;
+    margin: 0;
+    padding: 0;
+}
+
+/* ヘッダー */
+.header {
+    padding: 20px 0;
+    text-align: center;
+    font-size: 24px;
+    font-weight: normal;
+    color: #8e7d64;
+    border-bottom: 1px solid #dcd1c5;
+}
+
+.header__logo {
+    color: #8e7d64;
+    text-decoration: none;
+}
+
+.header__admin {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.header__admin-link {
+    color: #d7cbc0;
+    font-size: 12px;
+    text-decoration: none;
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+/* メインコンテンツの幅調整 */
+.contact-form__content {
+    width: 880px;
+    margin: 40px auto 100px auto;
+}
+
+/* 見出し */
+.contact-form__heading h2 {
+    font-family: 'Harrington', cursive;
+    font-size: 30px;
+    color: #8e7d64;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* フォーム全体 */
+.form {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+/* テキスト入力 */
+.form__input--text input[type="text"],
+.form__input--text input[type="date"],
+.form__input--select select {
+    width: 180px;
+    height: 30px;
+    border: 1px solid #dcd1c5;
+    background: #f5f0e8;
+    color: #a3947f;
+    font-size: 12px;
+    padding: 0 10px;
+    outline: none;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+.form__input--text input::placeholder {
+    font-size: 12px;
+    color: #a3947f;
+}
+
+/* セレクト */
+.form__input--select select {
+    cursor: pointer;
+}
+
+/* ボタン */
+.form__button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.form__button-submit {
+    background: #a3947f;
+    border: none;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 16px;
+    cursor: pointer;
+    border-radius: 3px;
+    text-decoration: none;
+    user-select: none;
+    transition: background-color 0.3s ease;
+}
+
+.form__button-submit:hover {
+    background: #8e7d64;
+}
+
+/* エクスポートボタンの位置調整 */
+.form__button[style] {
+    margin-top: 20px;
+}
+
+/* ページネーション */
+.pagination {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.pagination .page-item {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.pagination .page-link {
+    color: #8e7d64;
+    text-decoration: none;
+    padding: 4px 8px;
+    font-size: 14px;
+}
+
+.pagination .page-item.active .page-link {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* テーブル全体 */
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+    color: #a3947f;
+}
+
+/* テーブルヘッダー */
+.admin-table__header {
+    background-color: #a3947f;
+    color: white;
+    font-weight: normal;
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 10px;
+    border: 1px solid #dcd1c5;
+    text-align: left;
+    vertical-align: middle;
+}
+
+/* テーブル行 */
+.admin-table__row:nth-child(odd) {
+    background-color: #f5f0e8;
+}
+
+.admin-table__row:nth-child(even) {
+    background-color: #fff;
+}
+
+/* 詳細ボタン */
+.detail-button {
+    font-size: 12px;
+    padding: 5px 10px;
+    border: 1px solid #a3947f;
+    background: none;
+    color: #a3947f;
+    text-decoration: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.detail-button:hover {
+    background-color: #a3947f;
+    color: white;
+}
+
+/* レスポンシブ対応（任意） */
+@media screen and (max-width: 960px) {
+    .contact-form__content {
+        width: 95%;
+        margin: 20px auto;
+    }
+
+    .form {
+        flex-direction: column;
+    }
+
+    .form__input--text input[type="text"],
+    .form__input--text input[type="date"],
+    .form__input--select select {
+        width: 100%;
+    }
+
+    .form__button {
+        justify-content: flex-start;
+    }
+}
