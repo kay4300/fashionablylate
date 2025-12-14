@@ -52,8 +52,31 @@ class ContactController extends Controller
         // 確認画面に入力値を表示
         return view('confirm', compact('contact', 'genderText', 'categoryText'));
     }
+    // GETで直接アクセスされたときに、セッションからcontactを読み出して確認画面を表示する
+    public function showConfirm(Request $request)
+    {
+        $contact = $request->session()->get('contact');
+        if (!$contact) {
+            return redirect()->route('index');
+        }
+
+        $genderText = [
+            1 => '男性',
+            2 => '女性',
+            3 => 'その他',
+        ][$contact['gender'] ?? 0];
+
+        if (!empty($contact['category_id'])) {
+            $category = Category::find($contact['category_id']);
+            $categoryText = $category ? $category->content : '未選択';
+        } else {
+            $categoryText = '未選択';
+        }
+
+        return view('confirm', compact('contact', 'genderText', 'categoryText'));
+    }
     // 確認画面から完了画面へ値を渡しviewで表示する
-    public function send(ContactRequest $request)
+    public function send(Request $request)
     {
         $action = $request->input('action');
         $contactData = $request->session()->get('contact');

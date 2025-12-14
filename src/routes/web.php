@@ -24,11 +24,11 @@ Route::get('/', function () {
 });
 
 Route::get('/', [ContactController::class, 'index'])->name('index');
-Route::get('/confirm', [ContactController::class, 'confirm'])->name('confirm');
-Route::post('/confirm', [ContactController::class, 'confirm'])->name('confirm');
+Route::get('/confirm', [ContactController::class, 'showConfirm'])->name('confirm');
+Route::post('/confirm', [ContactController::class, 'confirm'])->name('confirm.post');
 // 送信・修正ボタン用
-// Route::get('/confirm/send', [ContactController::class, 'send'])->name('confirm.send');
-// Route::post('/confirm/send', [ContactController::class, 'send'])->name('confirm.send');
+Route::get('/confirm/send', [ContactController::class, 'send'])->name('confirm.send');
+Route::post('/confirm/send', [ContactController::class, 'send'])->name('confirm.send');
 Route::get('/thanks', [ContactController::class, 'thanks'])->name('thanks');
 
 // ログイン画面表示

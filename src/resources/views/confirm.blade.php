@@ -24,7 +24,7 @@
             <div class="confirm__heading">
                 <h2>confirm</h2>
             </div>
-            <form class="form" method="post" action="{{ route('confirm') }}">
+            <form class="form" method="post" action="{{ route('confirm.send') }}">
                 @csrf
                 <div class="confirm-table">
                     <table class="confirm-table__inner">
