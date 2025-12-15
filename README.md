@@ -15,7 +15,8 @@
 6.php artisan db:seed  
 
 ## *ER図*  
-<mxGraphModel><root><mxCell id="0"/><mxCell id="1" parent="0"/><mxCell id="2" edge="1" parent="1" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERzeroToMany;endFill=1;startArrow=ERzeroToMany;rounded=0;" value=""><mxGeometry height="100" relative="1" width="100" as="geometry"><mxPoint x="280" y="267" as="sourcePoint"/><mxPoint x="360" y="100" as="targetPoint"/></mxGeometry></mxCell></root></mxGraphModel>
+<img width="3084" height="1644" alt="image" src="https://github.com/user-attachments/assets/b4d0ff56-84ee-4bef-a008-62068e488544" />
+
 
 ## *使用技術*  
 php 8.1.33  
