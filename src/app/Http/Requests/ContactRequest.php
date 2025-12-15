@@ -53,6 +53,7 @@ class ContactRequest extends FormRequest
             'category_id.required' => 'お問い合わせの種類を選択してください',
             'detail.required' => 'お問い合わせの内容を入力してください',
             'detail.max' => 'お問い合わせ内容は120文字以内で入力してください',
+            
         ];
     }
 }
