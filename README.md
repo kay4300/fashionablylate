@@ -15,8 +15,7 @@
 6.php artisan db:seed  
 
 ## *ER図*  
-<img width="1259" height="745" alt="image" src="https://github.com/user-attachments/assets/62c873c5-06fe-4174-b001-fe3dcd0bfc79" />
-
+<img width="3084" height="1644" alt="image" src="https://github.com/user-attachments/assets/597ff819-4b2d-47f6-8e35-833243c8e313" />
 
 ## *使用技術*  
 php 8.1.33  
