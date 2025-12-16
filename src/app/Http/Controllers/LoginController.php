@@ -9,7 +9,7 @@ class LoginController extends Controller
 {
     public function showLoginForm()
     {
-        return view('/login'); 
+        return view('login'); 
     }
     // ログイン処理
     public function login(LoginRequest $request)

@@ -36,11 +36,10 @@ Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login.ind
 // ログイン処理
 Route::post('/login', [LoginController::class, 'login'])->name('login');
 // register画面表示
-Route::get('/register', [RegisterController::class, 'show'])
-    ->name('register');
-// Route::get('/register', function () {
-//     return view('register');
-// })->name('register');
+Route::get('/register', [RegisterController::class, 'showRegisterForm'])
+    ->name('register.index');
+Route::post('/register', [RegisterController::class, 'store'])->name('register.store');
+
 
 Route::get('/admin', [AdminController::class, 'index'])->name('admin');
 

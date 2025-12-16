@@ -1,4 +1,4 @@
-/* 全体背景と文字色 */
+全体背景と文字色
 body {
     background-color: #f0e9e3;
     font-family: 'Times New Roman', serif;
@@ -38,6 +38,7 @@ body {
     right: 10px;
     top: 50%;
     transform: translateY(-50%);
+    z-index: 10;
 }
 
 .header__register-link {
@@ -46,8 +47,8 @@ body {
     color: #d4cdc7;
     text-decoration: none;
     user-select: none;
-    cursor: default;
-    pointer-events: none;
+    cursor: pointer;
+    pointer-events: auto;
 
 }
 

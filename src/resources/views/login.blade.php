@@ -17,7 +17,7 @@
                 FashionablyLate
             </a>
             <div class="header__register">
-                <a href="/register" class="header__register-link">Register</a>
+                <a href="{{ route('register.index')  }}" class="header__register-link">Register</a>
             </div>
 
         </div>
@@ -36,7 +36,7 @@
                     </div>
                     <div class="form__group-content">
                         <div class="form__input--text">
-                            <input type="email" name="email" placeholder="test@example.com" value="{{ old('email') }}"/>
+                            <input type="email" name="email" placeholder="test@example.com" value="{{ old('email') }}" />
                         </div>
                         <div class="form__error">
                             @error('email')
@@ -62,6 +62,7 @@
                 </div>
                 <div class="form__button">
                     <button class="form__button-submit" type="submit">ログイン</button>
+
                 </div>
             </form>
         </div>

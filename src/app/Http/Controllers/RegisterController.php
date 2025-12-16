@@ -8,6 +8,10 @@ use App\Models\User;
 
 class RegisterController extends Controller
 {
+    public function showRegisterForm()
+    {
+        return view('register');
+    }
     public function store(RegisterRequest $request)
     {
         $validated = $request->validated();
@@ -19,7 +23,7 @@ class RegisterController extends Controller
             'password' => bcrypt($validated['password']),
         ]);
         
-        return redirect('/admin'); 
+        return redirect()->route('admin'); 
     }
 }
     //
