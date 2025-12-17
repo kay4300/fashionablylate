@@ -126,7 +126,9 @@
                         @endif
                     </td>
                     <td>{{ $contact->email }}</td>
-                    <td>{{ $contact->category->content }}</td>
+                    <!-- <td>{{ $contact->category->content }}</td> -->
+                    <td>{{ optional($contact->category)->content }}</td>
+
                     <td>
                         <a class="detail-button" href="/admin/detail/{{ $contact->id }}">詳細</a>
                     </td>

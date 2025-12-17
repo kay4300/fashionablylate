@@ -33,7 +33,7 @@ class ContactRequest extends FormRequest
             "tel3" => ["required", "digits:4"],
             "address" => ["required"],
             "building" => ["nullable", "string", "max:255"],
-            "category_id" => ["required"],
+            "category_id" => ["required", 'exists:categories,id'],
             "detail" => ["required", "string", "max:120"],
             //
         ];

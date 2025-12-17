@@ -35,6 +35,8 @@ Route::get('/thanks', [ContactController::class, 'thanks'])->name('thanks');
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login.index');
 // ログイン処理
 Route::post('/login', [LoginController::class, 'login'])->name('login');
+
+
 // register画面表示
 Route::get('/register', [RegisterController::class, 'showRegisterForm'])
     ->name('register.index');

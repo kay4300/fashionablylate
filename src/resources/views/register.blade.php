@@ -30,7 +30,7 @@
                 <h2>Register</h2>
             </div>
             <!-- action="/register"→登録処理用のルートに送信 -->
-            <form class="form" method="post" action="/register">
+            <form class="form" method="POST" action="/register">
                 @csrf
                 <div class="form__group">
                     <div class="form__group-title">

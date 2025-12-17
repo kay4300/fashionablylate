@@ -1,9 +1,8 @@
-全体背景と文字色
-body {
+全体背景と文字色 body {
     background-color: #f0e9e3;
     font-family: 'Times New Roman', serif;
     color: #7b6a60;
-    
+
     margin: 0;
     padding: 0;
     text-align: center;
