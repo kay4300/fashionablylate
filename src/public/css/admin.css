@@ -129,13 +129,19 @@ body {
 .pagination .page-link {
     color: #8e7d64;
     text-decoration: none;
-    padding: 4px 8px;
-    font-size: 14px;
+    padding: 3px 6px;
+    font-size: 13px;
 }
 
 .pagination .page-item.active .page-link {
     font-weight: bold;
     text-decoration: underline;
+}
+/* ページネーションの前へ・次へ（矢印）だけ小さくする */
+.pagination .page-link[aria-label="Previous"],
+.pagination .page-link[aria-label="Next"] {
+    font-size: 12px;
+    padding: 4px 6px;
 }
 
 /* テーブル全体 */
@@ -208,4 +214,13 @@ body {
     .form__button {
         justify-content: flex-start;
     }
+}
+/* Laravel pagination の矢印を強制的に小さくする */
+.pagination li:first-child a,
+.pagination li:last-child a,
+.pagination li:first-child span,
+.pagination li:last-child span {
+    font-size: 12px !important;
+    padding: 4px 6px !important;
+    line-height: 1 !important;
 }

@@ -126,8 +126,7 @@
                         @endif
                     </td>
                     <td>{{ $contact->email }}</td>
-                    <!-- <td>{{ $contact->category->content }}</td> -->
-                    <td>{{ optional($contact->category)->content }}</td>
+                    <td>{{ $contact->category_id->content ?? '未選択' }}</td>
 
                     <td>
                         <a class="detail-button" href="/admin/detail/{{ $contact->id }}">詳細</a>
@@ -135,13 +134,7 @@
                 </tr>
                 @endforeach
             </table>
-
-            <!-- ページ番号（下） -->
-            <div class="pagination">
-                {{ $contacts->links() }}
-            </div>
-
-        </div>
+       </div>
     </main>
 
 </body>
