@@ -17,7 +17,13 @@
                 FashionablyLate
             </a>
             <div class="header__admin">
-                <a href="/logout" class="header__admin-link">logout</a>
+                <!-- <a href="/logout" class="header__admin-link">logout</a> -->
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <button type="submit">
+                        logout
+                    </button>
+                </form>
             </div>
         </div>
     </header>
@@ -126,7 +132,7 @@
                         @endif
                     </td>
                     <td>{{ $contact->email }}</td>
-                    <td>{{ $contact->category_id->content ?? '未選択' }}</td>
+                    <td>{{ $contact->category->content ?? '未選択' }}</td>
 
                     <td>
                         <a class="detail-button" href="/admin/detail/{{ $contact->id }}">詳細</a>
@@ -134,7 +140,7 @@
                 </tr>
                 @endforeach
             </table>
-       </div>
+        </div>
     </main>
 
 </body>

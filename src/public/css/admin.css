@@ -1,6 +1,6 @@
 /* フォント */
 body {
-    font-family: 'Hiragino Kaku Gothic Pro', Meiryo, sans-serif;
+    font-family:  Meiryo, cursive;
     background: #fff;
     color: #776654;
     margin: 0;
@@ -29,11 +29,15 @@ body {
 }
 
 .header__admin-link {
-    color: #d7cbc0;
-    font-size: 12px;
+    color: #8e7d64;
+    font-size: 15px;
+    font-weight:bold;
+    padding: 6px 12px;
+    border: 2px solid black;
     text-decoration: none;
-    opacity: 0.3;
-    pointer-events: none;
+    opacity: 1;
+    pointer-events: auto;
+    cursor: pointer;
 }
 
 /* メインコンテンツの幅調整 */
@@ -44,7 +48,7 @@ body {
 
 /* 見出し */
 .contact-form__heading h2 {
-    font-family: 'Harrington', cursive;
+    font-family: 'Meiryo', cursive;
     font-size: 30px;
     color: #8e7d64;
     margin-bottom: 30px;
@@ -137,6 +141,7 @@ body {
     font-weight: bold;
     text-decoration: underline;
 }
+
 /* ページネーションの前へ・次へ（矢印）だけ小さくする */
 .pagination .page-link[aria-label="Previous"],
 .pagination .page-link[aria-label="Next"] {
@@ -215,6 +220,7 @@ body {
         justify-content: flex-start;
     }
 }
+
 /* Laravel pagination の矢印を強制的に小さくする */
 .pagination li:first-child a,
 .pagination li:last-child a,

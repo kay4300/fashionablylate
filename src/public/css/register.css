@@ -1,0 +1,151 @@
+body {
+    background-color: #f0e9e3;
+    font-family: 'Times New Roman', serif;
+    color: #7b6a60;
+
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* ヘッダー */
+.header {
+    background: transparent;
+    padding: 1.5rem 0;
+    border-bottom: none;
+}
+
+.header__inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.header__logo {
+    font-family: 'Times New Roman', serif;
+    font-size: 1.4rem;
+    font-weight: normal;
+    color: #7b6a60;
+    text-decoration: none;
+    user-select: none;
+    cursor: default;
+}
+
+.header__login {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.header__login-link {
+    font-family: 'Times New Roman', serif;
+    font-size: 0.9rem;
+    border: 2px solid black;
+    padding: 5px 5px;
+    font-weight: bold;
+    color: #7b6a60;
+    text-decoration: none;
+    user-select: none;
+    cursor: pointer;
+    pointer-events: auto;
+
+}
+
+/* メインのフォーム領域 */
+.register-form__content {
+    background-color: #f0e4dc;
+    max-width: 380px;
+    margin: 3rem auto 5rem auto;
+    padding: 3rem 3.5rem 4rem 3.5rem;
+    border-radius: 8px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.05);
+    text-align: left;
+}
+
+/* フォームタイトル */
+.register-form__heading h2 {
+    font-family: 'Times New Roman', serif;
+    font-weight: normal;
+    font-size: 1.3rem;
+    color: #7b6a60;
+    margin-bottom: 1.7rem;
+    text-align: center;
+}
+
+/* フォームグループ */
+.form__group {
+    margin-bottom: 1.6rem;
+}
+
+.form__group-title {
+    margin-bottom: 0.5rem;
+}
+
+.form__label--item {
+    font-family: 'Times New Roman', serif;
+    font-weight: normal;
+    font-size: 0.9rem;
+    color: #7b6a60;
+    user-select: none;
+}
+
+/* 入力フォーム */
+.form__input--text input {
+    width: 100%;
+    padding: 0.7rem 1rem;
+    font-family: 'Times New Roman', serif;
+    font-size: 0.9rem;
+    color: #7b6a60;
+    background-color: #f6f4f3;
+    border: 1px solid #ddd3c6;
+    border-radius: 3px;
+    box-sizing: border-box;
+    outline: none;
+    user-select: text;
+}
+
+.form__input--text input::placeholder {
+    color: #d4cdc7;
+    font-size: 0.75rem;
+}
+
+/* エラーメッセージ */
+.form__error {
+    font-family: 'Times New Roman', serif;
+    font-size: 0.75rem;
+    color: #b35b5b;
+    margin-top: 0.3rem;
+}
+
+/* ボタン */
+.form__button {
+    text-align: center;
+    margin-top: 1.7rem;
+}
+
+.form__button-submit {
+    font-family: 'Times New Roman', serif;
+    font-weight: normal;
+    font-size: 0.95rem;
+    background-color: #7b6a60;
+    color: #f0e9e3;
+    border: none;
+    padding: 0.7rem 2.2rem;
+    border-radius: 3px;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.3s ease;
+}
+
+.form__button-submit:hover {
+    background-color: #a18d7f;
+}
+
+/* 入力フォームのフォーカス時 */
+.form__input--text input:focus {
+    border-color: #a18d7f;
+    background-color: #fefefe;
+}

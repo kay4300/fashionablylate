@@ -1,4 +1,4 @@
-全体背景と文字色 body {
+body {
     background-color: #f0e9e3;
     font-family: 'Times New Roman', serif;
     color: #7b6a60;
@@ -42,8 +42,11 @@
 
 .header__register-link {
     font-family: 'Times New Roman', serif;
-    font-size: 0.7rem;
-    color: #d4cdc7;
+    font-size: 0.9rem;
+    border: 2px solid black;
+    padding: 5px 5px;
+    font-weight: bold;
+    color: #7b6a60;
     text-decoration: none;
     user-select: none;
     cursor: pointer;
