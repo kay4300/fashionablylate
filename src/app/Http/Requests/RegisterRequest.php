@@ -27,7 +27,6 @@ class RegisterRequest extends FormRequest
             'name'     => ['required', 'string', 'max:255'],
             'email'    => ['required', 'string', 'email', 'max:255', 'unique:users,email'],
             'password' => ['required', 'string', 'min:8'],
-            'category_id' => ['required', 'exists:categories,id'],
         ];
     }
 
