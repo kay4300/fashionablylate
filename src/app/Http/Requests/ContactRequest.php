@@ -28,9 +28,7 @@ class ContactRequest extends FormRequest
             "first_name" => ["required", "string", "max:8"],
             "gender" => ["required", "in:1,2,3"],
             "email" => ["required", "string", "email"],
-            "tel1" => ["required", "digits:3"],
-            "tel2" => ["required", "digits:4"],
-            "tel3" => ["required", "digits:4"],
+            'tel' => ['required', 'regex:/^\d{10,11}$/'],
             "address" => ["required"],
             "building" => ["nullable", "string", "max:255"],
             "category_id" => ["required", 'exists:categories,id'],
@@ -38,6 +36,14 @@ class ContactRequest extends FormRequest
             //
         ];
     }
+    // 電話番号を１つにまとめる
+    public function prepareForValidation()
+    {
+        $this->merge([
+            'tel' => $this->tel1 . $this->tel2 . $this->tel3,
+        ]);
+    }
+
     public function messages()
     {
         return [
@@ -46,9 +52,10 @@ class ContactRequest extends FormRequest
             'gender.required' => '性別を入力してください',
             'email.required' => 'メールアドレスを入力してください',
             'email.email' => 'メールアドレスはメール形式で入力してください',
-            'tel1.required' => '電話番号を入力してください',
-            'tel2.required' => '電話番号を入力してください',
-            'tel3.required' => '電話番号を入力してください',
+            'tel.required' => '電話番号を入力してください。',
+            // 'tel1.required' => '電話番号を入力してください',
+            // 'tel2.required' => '電話番号を入力してください',
+            // 'tel3.required' => '電話番号を入力してください',
             'address.required' => '住所を入力してください',
             'category_id.required' => 'お問い合わせの種類を選択してください',
             'detail.required' => 'お問い合わせの内容を入力してください',

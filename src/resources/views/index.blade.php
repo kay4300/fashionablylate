@@ -24,6 +24,7 @@
             <div class="contact-form__heading">
                 <h2>contact</h2>
             </div>
+
             <form class="form" method="post" action="/confirm">
                 @csrf
                 <div class="form__group">
@@ -49,6 +50,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="form__group">
                     <div class="form__group-title">
                         <span class="form__label--item">性別</span>
@@ -76,6 +78,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="form__group">
                     <div class="form__group-title">
                         <span class="form__label--item">メールアドレス</span>
@@ -92,6 +95,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="form__group">
                     <div class="form__group-title">
                         <span class="form__label--item">電話番号</span>
@@ -100,20 +104,17 @@
                     <div class="form__group-content">
                         <div class="form__input--tel">
                             <input type="tel" name="tel1" maxlength="3" placeholder="090" value="{{ old('tel1') }}" /> -
-                            @error('tel1')
-                            <div class="form__error">{{ $message }}</div>
-                            @enderror
                             <input type="tel" name="tel2" maxlength="4" placeholder="1234" value="{{ old('tel2') }}" /> -
-                            @error('tel2')
-                            <div class="form__error">{{ $message }}</div>
-                            @enderror
                             <input type="tel" name="tel3" maxlength="4" placeholder="5678" value="{{ old('tel3') }}" />
-                            @error('tel3')
-                            <div class="form__error">{{ $message }}</div>
-                            @enderror
+                        </div>
+                        <div class="form__error">
+                        @error('tel')
+                        <div class="form__error">{{ $message }}</div>
+                        @enderror
                         </div>
                     </div>
                 </div>
+
                 <div class=form__group>
                     <div class="form__group-title">
                         <span class="form__label--item">住所</span>
@@ -130,6 +131,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class=form__group>
                     <div class="form__group-title">
                         <span class="form__label--item">建物名</span>
@@ -140,6 +142,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="form__group">
                     <div class="form__group-title">
                         <span class="form__label--item">お問い合わせの種類</span>
@@ -151,17 +154,17 @@
                                 <option value="">選択してください</option>
                                 @foreach($categories as $category)
                                 <option value="{{ $category->id }}" {{ old('category_id') == $category->id ? 'selected' : '' }}>
-                                    {{ $category->content }}</option>
+                                    {{ $category->content }}
+                                </option>
                                 @endforeach
                             </select>
                         </div>
-                    </div>
-                    <div class="form__error">
                         @error('category_id')
                         <div class="form__error">{{ $message }}</div>
                         @enderror
                     </div>
                 </div>
+
                 <div class="form__group">
                     <div class="form__group-title">
                         <span class="form__label--item">お問い合わせ内容</span>

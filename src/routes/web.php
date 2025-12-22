@@ -43,7 +43,12 @@ Route::get('/register', [RegisterController::class, 'showRegisterForm'])
 Route::post('/register', [RegisterController::class, 'store'])->name('register.store');
 
 
-Route::get('/admin', [AdminController::class, 'index'])->name('admin');
+// Route::get('/admin', [AdminController::class, 'index'])->name('admin');←不要
+Route::get('/admin', [AdminController::class, 'search'])->name('admin');
+Route::post('/admin/delete', [AdminController::class, 'destroy'])->name('admin.delete');
+
+// モーダルウィンドウ
+Route::get('/admin/detail/{id}', [AdminController::class, 'detail'])->name('admin.detail');
 
 // ログイン後の管理者画面
 // Route::get('/admin', function () {
