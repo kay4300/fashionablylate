@@ -1,6 +1,6 @@
 body {
     background-color: #f0e9e3;
-    font-family: 'Times New Roman', serif;
+    font-family: 'meiryo', serif;
     color: #7b6a60;
 
     margin: 0;
@@ -85,7 +85,7 @@ body {
 }
 
 .form__label--item {
-    font-family: 'Times New Roman', serif;
+    font-family: 'meiryo', serif;
     font-weight: normal;
     font-size: 0.9rem;
     color: #7b6a60;
@@ -96,7 +96,7 @@ body {
 .form__input--text input {
     width: 100%;
     padding: 0.7rem 1rem;
-    font-family: 'Times New Roman', serif;
+    font-family: 'meiryo', serif;
     font-size: 0.9rem;
     color: #7b6a60;
     background-color: #f6f4f3;
@@ -114,7 +114,7 @@ body {
 
 /* エラーメッセージ */
 .form__error {
-    font-family: 'Times New Roman', serif;
+    font-family: 'meiryo', serif;
     font-size: 0.75rem;
     color: #b35b5b;
     margin-top: 0.3rem;
@@ -127,7 +127,7 @@ body {
 }
 
 .form__button-submit {
-    font-family: 'Times New Roman', serif;
+    font-family: 'meiryo', serif;
     font-weight: normal;
     font-size: 0.95rem;
     background-color: #7b6a60;
