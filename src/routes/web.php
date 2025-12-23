@@ -49,6 +49,10 @@ Route::post('/admin/delete', [AdminController::class, 'destroy'])->name('admin.d
 
 // モーダルウィンドウ
 Route::get('/admin/detail/{id}', [AdminController::class, 'detail'])->name('admin.detail');
+// ログアウト
+Route::get('/admin/logout', [AdminController::class, 'logout'])->name('admin.logout');
+// csvエクスポート
+Route::post('/admin/export', [AdminController::class, 'export'])->name('export');
 
 // ログイン後の管理者画面
 // Route::get('/admin', function () {

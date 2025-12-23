@@ -23,7 +23,7 @@ body {
 }
 
 .header__logo {
-    font-family: 'Times New Roman', serif;
+    font-family: 'meiryo', serif;
     font-size: 1.4rem;
     font-weight: normal;
     color: #7b6a60;
@@ -34,6 +34,7 @@ body {
 
 .header__register {
     position: absolute;
+    /* margin-left:auto; */
     right: 10px;
     top: 50%;
     transform: translateY(-50%);
@@ -41,7 +42,7 @@ body {
 }
 
 .header__register-link {
-    font-family: 'Times New Roman', serif;
+    font-family: 'meiryo', serif;
     font-size: 0.9rem;
     border: 2px solid black;
     padding: 5px 5px;
@@ -67,7 +68,7 @@ body {
 
 /* フォームタイトル */
 .contact-form__heading h2 {
-    font-family: 'Times New Roman', serif;
+    font-family: 'meiryo', serif;
     font-weight: normal;
     font-size: 1.3rem;
     color: #7b6a60;
@@ -114,7 +115,7 @@ body {
 
 /* エラーメッセージ */
 .form__error {
-    font-family: 'Times New Roman', serif;
+    font-family: 'meiryo', serif;
     font-size: 0.75rem;
     color: #b35b5b;
     margin-top: 0.3rem;
@@ -127,7 +128,7 @@ body {
 }
 
 .form__button-submit {
-    font-family: 'Times New Roman', serif;
+    font-family: 'meiryo', serif;
     font-weight: normal;
     font-size: 0.95rem;
     background-color: #7b6a60;

@@ -36,17 +36,18 @@
                         <div class="form__input--name">
                             <label>
                                 <input type="text" name="last_name" placeholder="山田" value="{{ old('last_name') }}" />
-                            </label>
-                            @error('last_name')
-                            <div class="form__error">{{ $message }}</div>
-                            @enderror
-
+                            </label>   
                             <label>
                                 <input type="text" name="first_name" placeholder="太郎" value="{{ old('first_name') }}" />
                             </label>
-                            @error('first_name')
+                        </div>    
+                        <div class="form__error--name">
+                            @error('last_name')
                             <div class="form__error">{{ $message }}</div>
                             @enderror
+                            @error('first_name')
+                            <div class="form__error">{{ $message }}</div>
+                            @enderror   
                         </div>
                     </div>
                 </div>
@@ -108,9 +109,9 @@
                             <input type="tel" name="tel3" maxlength="4" placeholder="5678" value="{{ old('tel3') }}" />
                         </div>
                         <div class="form__error">
-                        @error('tel')
-                        <div class="form__error">{{ $message }}</div>
-                        @enderror
+                            @error('tel')
+                            <div class="form__error">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
                 </div>
