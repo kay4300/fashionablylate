@@ -14,7 +14,7 @@
     <header class="header">
         <div class="header__inner">
             <a class="header__logo" href="/">
-                fashionablyLate
+                FashionablyLate
             </a>
         </div>
     </header>
@@ -36,18 +36,18 @@
                         <div class="form__input--name">
                             <label>
                                 <input type="text" name="last_name" placeholder="山田" value="{{ old('last_name') }}" />
-                            </label>   
+                            </label>
                             <label>
                                 <input type="text" name="first_name" placeholder="太郎" value="{{ old('first_name') }}" />
                             </label>
-                        </div>    
+                        </div>
                         <div class="form__error--name">
                             @error('last_name')
                             <div class="form__error">{{ $message }}</div>
                             @enderror
                             @error('first_name')
                             <div class="form__error">{{ $message }}</div>
-                            @enderror   
+                            @enderror
                         </div>
                     </div>
                 </div>

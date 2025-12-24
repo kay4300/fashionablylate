@@ -17,6 +17,9 @@ class ContactController extends Controller
     //フォーム入力画面から確認画面へ値を渡しviewで表示する
     public function confirm(ContactRequest $request)
     {
+        // デバッグ用
+        // dd($request->all());
+
         // 入力値をすべて取得
         // $contact = $request->all();
 
