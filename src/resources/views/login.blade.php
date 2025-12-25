@@ -14,7 +14,7 @@
     <header class="header">
         <div class="header__inner">
             <a class="header__logo" href="/">
-                FashionablyLate
+                <h1>FashionablyLate</h1>
             </a>
             <div class="header__register">
                 <a href="{{ route('register.index')  }}" class="header__register-link">Register</a>

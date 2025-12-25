@@ -23,8 +23,8 @@ body {
 }
 
 .header__logo {
-    font-family: 'meiryo', serif;
-    font-size: 1.4rem;
+    font-family: 'times new roman', serif;
+    font-size: 15px;
     font-weight: normal;
     color: #7b6a60;
     text-decoration: none;
@@ -42,7 +42,7 @@ body {
 }
 
 .header__register-link {
-    font-family: 'meiryo', serif;
+    font-family: 'times new roman', serif;
     font-size: 0.9rem;
     border: 2px solid black;
     padding: 5px 5px;
@@ -68,7 +68,7 @@ body {
 
 /* フォームタイトル */
 .contact-form__heading h2 {
-    font-family: 'meiryo', serif;
+    font-family: 'times new roman', serif;
     font-weight: normal;
     font-size: 1.3rem;
     color: #7b6a60;

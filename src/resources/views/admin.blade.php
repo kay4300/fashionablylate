@@ -14,7 +14,7 @@
     <header class="header">
         <div class="header__inner">
             <a class="header__logo" href="/">
-                FashionablyLate
+                <h1>FashionablyLate</h1>
             </a>
             <div class="header__admin">
                 <!-- <a href="/logout" class="header__admin-link">logout</a> -->
@@ -146,66 +146,67 @@
     </main>
     <!-- モーダルウィンドウ -->
     @foreach($contacts as $contact)
-        <div class="modal" id="modal-{{ $contact->id }}">
-            <a href="#" class="modal-overlay"></a>
+    <div class="modal" id="modal-{{ $contact->id }}">
+        <a href="#" class="modal-overlay"></a>
 
-            <div class="modal__inner">
-                <div class="modal__content">
+        <div class="modal__inner">
+            <div class="modal__content">
 
-                    <form class="modal__detail-form" action="/delete" method="post">
-                        @csrf
+                <form class="modal__detail-form" action="{{ route('admin.delete') }}" method="post">
+                    @method('DELETE')
+                    @csrf
 
-                        <div class="modal-form__group">
-                            <label class="modal-form__label">お名前</label>
-                            <p>{{ $contact->last_name }} {{ $contact->first_name }}</p>
-                        </div>
+                    <div class="modal-form__group">
+                        <label class="modal-form__label">お名前</label>
+                        <p>{{ $contact->last_name }} {{ $contact->first_name }}</p>
+                    </div>
 
-                        <div class="modal-form__group">
-                            <label class="modal-form__label">性別</label>
-                            <p>
+                    <div class="modal-form__group">
+                        <label class="modal-form__label">性別</label>
+                        <p>
                             @if($contact->gender == 1) 男性
                             @elseif($contact->gender == 2) 女性
                             @else その他
                             @endif
-                            </p>
-                        </div>
+                        </p>
+                    </div>
 
-                        <div class="modal-form__group">
-                            <label class="modal-form__label">メールアドレス</label>
-                            <p>{{ $contact->email }}</p>
-                        </div>
+                    <div class="modal-form__group">
+                        <label class="modal-form__label">メールアドレス</label>
+                        <p>{{ $contact->email }}</p>
+                    </div>
 
-                        <div class="modal-form__group">
-                            <label class="modal-form__label">電話番号</label>
-                            <p>{{ $contact->tell }}</p>
-                        </div>
+                    <div class="modal-form__group">
+                        <label class="modal-form__label">電話番号</label>
+                        <p>{{ $contact->tel }}</p>
+                    </div>
 
-                        <div class="modal-form__group">
-                            <label class="modal-form__label">住所</label>
-                            <p>{{ $contact->address }}</p>
-                        </div>
+                    <div class="modal-form__group">
+                        <label class="modal-form__label">住所</label>
+                        <p>{{ $contact->address }}</p>
+                    </div>
 
-                        <div class="modal-form__group">
-                            <label class="modal-form__label">お問い合わせの種類</label>
-                            <p>{{ $contact->category->content }}</p>
-                        </div>
+                    <div class="modal-form__group">
+                        <label class="modal-form__label">お問い合わせの種類</label>
+                        <p>{{ $contact->category->content }}</p>
+                    </div>
 
-                        <div class="modal-form__group">
-                            <label class="modal-form__label">お問い合わせ内容</label>
-                            <p>{{ $contact->detail }}</p>
-                        </div>
+                    <div class="modal-form__group">
+                        <label class="modal-form__label">お問い合わせ内容</label>
+                        <p>{{ $contact->detail }}</p>
+                    </div>
 
-                        <input type="hidden" name="id" value="{{ $contact->id }}">
+                    <input type="hidden" name="id" value="{{ $contact->id }}">
+                    <input class="modal-form__delete-btn btn" type="submit" value="削除">
+                </form>
 
-                        <input class="modal-form__delete-btn btn" type="submit" value="削除">
-                    </form>
-
-                </div>
-
-                <!-- ×で閉じる -->
-                <a href="#" class="modal__close-btn">×</a>
             </div>
+
+            <!-- ×で閉じる -->
+            <a href="#" class="modal__close-btn">×</a>
         </div>
+    </div>
     @endforeach
 </body>
+
 </html>

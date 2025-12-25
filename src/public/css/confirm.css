@@ -10,13 +10,15 @@ body {
 
 /* ヘッダー */
 .header__logo {
-    font-size: 32px;
+    font-family: 'Times New Roman', serif;
+    font-size: 15px;
     color: #6b5b50;
     text-decoration: none;
 }
 
 /* 見出し */
 .confirm__heading h2 {
+    font-family: 'Times New Roman', serif;
     font-size: 26px;
     font-weight: normal;
     margin: 40px 0;

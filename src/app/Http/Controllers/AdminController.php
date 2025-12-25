@@ -58,11 +58,7 @@ class AdminController extends Controller
         return view('admin', compact('contacts', 'categories', 'csvData'));
     }
 
-    public function destroy(Request $request)
-    {
-        Contact::find($request->id)->delete();
-        return redirect('/admin');
-    }
+
     private function getSearchQuery(Request $request, $query)
     {
         // !empty()で空文字nullを無視する
@@ -87,8 +83,6 @@ class AdminController extends Controller
         if (!empty($request->created_at)) {
             $query->whereDate('created_at', $request->created_at);
         }
-
-
         return $query;
     }
     // モーダルウィンドウ。/admin/detail/{id}にアクセスすると対象データを渡しでviewに表示
@@ -96,6 +90,12 @@ class AdminController extends Controller
     {
         $contact = Contact::with('category')->findOrFail($id);
         return view('admin_detail', compact('contact'));
+    }
+
+    public function destroy(Request $request)
+    {
+        Contact::find($request->id)->delete();
+        return redirect('/admin')->with('message', 'データを削除しました');
     }
     // public function export(Request $request)
     // {

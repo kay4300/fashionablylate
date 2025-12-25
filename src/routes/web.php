@@ -45,10 +45,12 @@ Route::post('/register', [RegisterController::class, 'store'])->name('register.s
 
 // Route::get('/admin', [AdminController::class, 'index'])->name('admin');←不要
 Route::get('/admin', [AdminController::class, 'search'])->name('admin');
-Route::post('/admin/delete', [AdminController::class, 'destroy'])->name('admin.delete');
+
 
 // モーダルウィンドウ
 Route::get('/admin/detail/{id}', [AdminController::class, 'detail'])->name('admin.detail');
+// データ削除
+Route::delete('/admin/delete', [AdminController::class, 'destroy'])->name('admin.delete');
 // ログアウト
 Route::get('/admin/logout', [AdminController::class, 'logout'])->name('admin.logout');
 // csvエクスポート

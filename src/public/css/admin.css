@@ -18,11 +18,13 @@ body {
 }
 
 .header__logo {
+    font-family: 'Times New Roman', serif;
     color: #8e7d64;
     text-decoration: none;
 }
 
 .header__admin {
+    font-family: 'Times New Roman', serif;
     position: absolute;
     top: 20px;
     right: 20px;
@@ -255,18 +257,34 @@ body {
 
 /* 背景 */
 .modal-overlay {
-    position: absolute;
+    /* absoluteから変更 */
+    position: fixed;
     inset: 0;
     background: rgba(0, 0, 0, 0.5);
+    /* モーダル本体より下 */
+    z-index: 1000;
 }
 
 /* 中央配置 */
 .modal__inner {
-    position: relative;
+    /* relativeから変更して中央に */
+    position: fixed;
+    /* 画面中央 */
+    top: 50%;
+    left: 50%;
+    /* 真ん中 */
+    transform: translate(-50%, -50%);
     max-width: 600px;
-    margin: 10% auto;
+    /* 高さ制限 margin: 10% auto;から変更*/
+    max-height: 80%;
+    /* 中身が多い場合スクロールできる */
+    overflow-y: auto;
     background: #fff;
     padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0, 3);
+    /* 背景より前面 */
+    z-index: 1001;
 }
 
 /* ×ボタン */
@@ -277,4 +295,6 @@ body {
     font-size: 24px;
     text-decoration: none;
     color: #000;
+    /* モーダル内容より前面 */
+    z-index: 1002;
 }

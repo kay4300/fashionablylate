@@ -14,7 +14,7 @@
     <header class="header">
         <div class="header__inner">
             <a class="header__logo" href="/">
-                FashionablyLate
+                <h1>FashionablyLate</h1>
             </a>
             <div class="header__login">
                 <!-- ヘッダーの「Login」ボタンを押すと /login にアクセスし、LoginController@index が呼ばれて login.blade.php が表示
