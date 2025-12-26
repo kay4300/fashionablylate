@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Category;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -14,6 +15,8 @@ class CategoriesTableSeeder extends Seeder
      */
     public function run()
     {
+        Category::truncate();
+
         DB::table('categories')->insert([
             ['content' => '1.商品のお届けについて'],
             ['content' => '2.商品の交換について'],

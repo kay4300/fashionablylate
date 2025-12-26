@@ -25,6 +25,7 @@ body {
 
 .header__admin {
     font-family: 'Times New Roman', serif;
+    font-size: 15px;
     position: absolute;
     top: 20px;
     right: 20px;
@@ -50,7 +51,7 @@ body {
 
 /* 見出し */
 .contact-form__heading h2 {
-    font-family: 'Meiryo', cursive;
+    font-family: 'times New Roman', serif;
     font-size: 30px;
     color: #8e7d64;
     margin-bottom: 30px;
@@ -62,14 +63,14 @@ body {
     display: flex;
     gap: 12px;
     margin-bottom: 30px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 }
 
 /* テキスト入力 */
 .form__input--text input[type="text"],
 .form__input--text input[type="date"],
 .form__input--select select {
-    width: 180px;
+    width: 170px;
     height: 30px;
     border: 1px solid #dcd1c5;
     background: #f5f0e8;
