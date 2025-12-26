@@ -67,7 +67,33 @@ body {
 }
 
 /* テキスト入力 */
-.form__input--text input[type="text"],
+/* 共通スタイル（幅以外） */
+.form__input--text input,
+.form__input--select select {
+    height: 30px;
+    border: 1px solid #dcd1c5;
+    background: #f5f0e8;
+    color: #a3947f;
+    font-size: 12px;
+    padding: 0 10px;
+    outline: none;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+/* 個別 width 指定 */
+.form__input--text input[type="text"] {
+    width: 250px;
+}
+
+.form__input--text input[type="date"] {
+    width: 130px;
+}
+
+.form__input--select select {
+    width: 150px;
+}
+/* .form__input--text input[type="text"],
 .form__input--text input[type="date"],
 .form__input--select select {
     width: 170px;
@@ -80,7 +106,7 @@ body {
     outline: none;
     border-radius: 3px;
     box-sizing: border-box;
-}
+} */
 
 .form__input--text input::placeholder {
     font-size: 12px;
