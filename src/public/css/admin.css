@@ -17,6 +17,13 @@ body {
     border-bottom: 1px solid #dcd1c5;
 }
 
+.header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
 .header__logo {
     font-family: 'Times New Roman', serif;
     color: #8e7d64;
@@ -25,21 +32,32 @@ body {
 
 .header__admin {
     font-family: 'Times New Roman', serif;
-    font-size: 15px;
+    font-size: 20px;
     position: absolute;
-    top: 20px;
-    right: 20px;
+    right: 50%;
+    transform: translateX(-150%);
+    top: 30px;
+    right: 100px;
 }
 
 .header__admin-link {
     color: #8e7d64;
-    font-size: 15px;
+    font-size: 20px;
     font-weight: bold;
     padding: 6px 12px;
     border: 2px solid black;
     text-decoration: none;
     opacity: 1;
     pointer-events: auto;
+    cursor: pointer;
+}
+
+.header__admin button {
+    background: none;
+    border: 2px solid #8e7d64;
+    color: #8e7d64;
+    font-size: 15px;
+    padding: 4px 10px;
     cursor: pointer;
 }
 
@@ -82,31 +100,21 @@ body {
 }
 
 /* 個別 width 指定 */
-.form__input--text input[type="text"] {
-    width: 250px;
+.form__input--text input [name="keyword"] {
+    width: 300px;
 }
 
-.form__input--text input[type="date"] {
+.form__input--text input [name="created_at"] {
     width: 130px;
 }
 
-.form__input--select select {
-    width: 150px;
+.form__input--select select [name="gender"] {
+    width: 70px;
 }
-/* .form__input--text input[type="text"],
-.form__input--text input[type="date"],
-.form__input--select select {
-    width: 170px;
-    height: 30px;
-    border: 1px solid #dcd1c5;
-    background: #f5f0e8;
-    color: #a3947f;
-    font-size: 12px;
-    padding: 0 10px;
-    outline: none;
-    border-radius: 3px;
-    box-sizing: border-box;
-} */
+
+.form__input--select select [name="category_id"] {
+    width: 200px;
+}
 
 .form__input--text input::placeholder {
     font-size: 12px;
