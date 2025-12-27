@@ -41,11 +41,7 @@
                 <div class="form__group">
                     <div class="form__group-content">
                         <div class="form__input--text">
-                            <input
-                                type="text"
-                                name="keyword"
-                                placeholder="名前やメールアドレスを入力してください"
-                                value="{{ request('keyword') }}" />
+                            <input type="text" name="keyword" placeholder="名前やメールアドレスを入力してください" value="{{ request('keyword') }}" />
                         </div>
                     </div>
                 </div>
@@ -84,10 +80,7 @@
                 <div class="form__group">
                     <div class="form__group-content">
                         <div class="form__input--text">
-                            <input
-                                type="date"
-                                name="created_at"
-                                value="{{ request('created_at') }}" />
+                            <input type="date" name="created_at" value="{{ request('created_at') }}" />
                         </div>
                     </div>
                 </div>
