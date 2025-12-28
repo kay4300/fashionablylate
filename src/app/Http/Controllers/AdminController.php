@@ -65,8 +65,8 @@ class AdminController extends Controller
         if (!empty($request->keyword)) {
             $keyword = $request->keyword;
             $query->where(function ($q) use ($keyword) {
-                $q->where('first_name', 'like', "%{$keyword}%") 
-                    ->orWhere('last_name', 'like', "%{$keyword}%") 
+                $q->where('first_name', 'like', "%{$keyword}%")
+                    ->orWhere('last_name', 'like', "%{$keyword}%")
                     ->orWhere('email', 'like', "%{$keyword}%");
             });
         }
