@@ -35,17 +35,17 @@ body {
 .header__register {
     position: absolute;
     /* margin-left:auto; */
-    right: 10px;
+    right: 300px;
     top: 50%;
     transform: translateY(-50%);
     z-index: 10;
 }
 
 .header__register-link {
-    font-family: 'times new roman', serif;
-    font-size: 0.9rem;
-    border: 2px solid black;
-    padding: 5px 5px;
+    font-family: 'Times new roman', serif;
+    font-size: 20px;
+    border: 1px solid black;
+    padding: 6px 12px;
     font-weight: bold;
     color: #7b6a60;
     text-decoration: none;

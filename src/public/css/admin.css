@@ -10,9 +10,7 @@ body {
 /* ヘッダー */
 .header {
     padding: 20px 0;
-    text-align: center;
-    font-size: 24px;
-    font-weight: normal;
+    text-align: center;    
     color: #8e7d64;
     border-bottom: 1px solid #dcd1c5;
 }
@@ -26,38 +24,30 @@ body {
 
 .header__logo {
     font-family: 'Times New Roman', serif;
+    font-size: 24px;
+    font-weight: normal;
     color: #8e7d64;
     text-decoration: none;
 }
 
 .header__admin {
-    font-family: 'Times New Roman', serif;
-    font-size: 20px;
     position: absolute;
-    right: 50%;
-    transform: translateX(-150%);
-    top: 30px;
-    right: 100px;
+    right: 300px;
+    top: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
 }
 
 .header__admin-link {
     color: #8e7d64;
+    font-family: 'Times New Roman', serif;
     font-size: 20px;
     font-weight: bold;
     padding: 6px 12px;
-    border: 2px solid black;
+    border: 1px solid black;
     text-decoration: none;
     opacity: 1;
     pointer-events: auto;
-    cursor: pointer;
-}
-
-.header__admin button {
-    background: none;
-    border: 2px solid #8e7d64;
-    color: #8e7d64;
-    font-size: 15px;
-    padding: 4px 10px;
     cursor: pointer;
 }
 
@@ -69,7 +59,7 @@ body {
 
 /* 見出し */
 .contact-form__heading h2 {
-    font-family: 'times New Roman', serif;
+    font-family: 'Times New Roman', serif;
     font-size: 30px;
     color: #8e7d64;
     margin-bottom: 30px;

@@ -20,8 +20,8 @@
                 <!-- <a href="/logout" class="header__admin-link">logout</a> -->
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
-                    <button type="submit">
-                        logout
+                    <button class="header__admin-link" type="submit">
+                        Logout
                     </button>
                 </form>
             </div>
