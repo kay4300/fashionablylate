@@ -41,13 +41,13 @@
                                 <input type="text" name="first_name" placeholder="太郎" value="{{ old('first_name') }}" />
                             </label>
                         </div>
-                        <div class="form__error--name">
-                            @error('last_name')
-                            <div class="form__error">{{ $message }}</div>
+                        <div class="form__error">
+                            @error('name')
+                            {{ $message }}
                             @enderror
-                            @error('first_name')
-                            <div class="form__error">{{ $message }}</div>
-                            @enderror
+                            <!-- @error('first_name')
+                            {{ $message }}
+                            @enderror -->
                         </div>
                     </div>
                 </div>
@@ -74,7 +74,7 @@
                         </div>
                         <div class="form__error">
                             @error('gender')
-                            <div class="form__error">{{ $message }}</div>
+                            {{ $message }}
                             @enderror
                         </div>
                     </div>
@@ -91,7 +91,7 @@
                         </div>
                         <div class="form__error">
                             @error('email')
-                            <div class="form__error">{{ $message }}</div>
+                            {{ $message }}
                             @enderror
                         </div>
                     </div>
@@ -110,7 +110,7 @@
                         </div>
                         <div class="form__error">
                             @error('tel')
-                            <div class="form__error">{{ $message }}</div>
+                            {{ $message }}
                             @enderror
                         </div>
                     </div>
@@ -127,7 +127,7 @@
                         </div>
                         <div class="form__error">
                             @error('address')
-                            <div class="form__error">{{ $message }}</div>
+                            {{ $message }}
                             @enderror
                         </div>
                     </div>
@@ -160,9 +160,11 @@
                                 @endforeach
                             </select>
                         </div>
-                        @error('category_id')
-                        <div class="form__error">{{ $message }}</div>
-                        @enderror
+                        <div class="form__error">
+                            @error('category_id')
+                            {{ $message }}
+                            @enderror
+                        </div>
                     </div>
                 </div>
 
@@ -173,6 +175,11 @@
                     <div class="form__group-content">
                         <div class="form__input--textarea">
                             <textarea name="detail" placeholder="お問い合わせ内容を記入ください">{{ old('detail') }}</textarea>
+                        </div>
+                        <div class="form__error">
+                            @error('detail')
+                            {{ $message }}
+                            @enderror
                         </div>
                     </div>
                 </div>

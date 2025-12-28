@@ -26,11 +26,13 @@ class ContactRequest extends FormRequest
         return [
             "last_name" => ["required", "string", "max:8"],
             "first_name" => ["required", "string", "max:8"],
+            "name" => ["required"],
             "gender" => ["required", "in:1,2,3"],
             "email" => ["required", "string", "email"],
             "tel1" => ["required", "string", "max:3"],
             "tel2" => ["required", "string", "max:4"],
             "tel3" => ["required", "string", "max:4"],
+            "tel" => ["required"],
             "address" => ["required"],
             "building" => ["nullable", "string", "max:255"],
             "category_id" => ["required", 'exists:categories,id'],
@@ -44,13 +46,16 @@ class ContactRequest extends FormRequest
         $this->merge([
             'tel' => $this->tel1 . $this->tel2 . $this->tel3,
         ]);
+        $this->merge([
+            'name' => $this->last_name . $this->first_name,
+        ]);
     }
 
     public function messages()
     {
         return [
-            'last_name.required' => '姓を入力してください',
-            'first_name.required' => '名を入力してください',
+            // 'last_name.required' => '姓を入力してください',
+            'name.required' => '姓名を入力してください',
             'gender.required' => '性別を入力してください',
             'email.required' => 'メールアドレスを入力してください',
             'email.email' => 'メールアドレスはメール形式で入力してください',
