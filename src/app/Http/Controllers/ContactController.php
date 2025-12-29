@@ -20,9 +20,6 @@ class ContactController extends Controller
         // デバッグ用
         // dd($request->all());
 
-        // 入力値をすべて取得
-        // $contact = $request->all();
-
         // バリデーション済みのデータを取得
         $contact = $request->validated();
 

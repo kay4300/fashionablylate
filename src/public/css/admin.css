@@ -1,6 +1,6 @@
 /* フォント */
 body {
-    font-family: Meiryo, cursive;
+    font-family: "meiryo", cursive;
     background: #fff;
     color: #776654;
     margin: 0;
@@ -10,7 +10,7 @@ body {
 /* ヘッダー */
 .header {
     padding: 20px 0;
-    text-align: center;    
+    text-align: center;
     color: #8e7d64;
     border-bottom: 1px solid #dcd1c5;
 }
@@ -24,7 +24,7 @@ body {
 
 .header__logo {
     font-family: 'Times New Roman', serif;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: normal;
     color: #8e7d64;
     text-decoration: none;
@@ -90,19 +90,19 @@ body {
 }
 
 /* 個別 width 指定 */
-.form__input--text input [name="keyword"] {
-    width: 300px;
+.form__input--text input[name="keyword"] {
+    width: 270px;
 }
 
-.form__input--text input [name="created_at"] {
+.form__input--text input[name="created_at"] {
     width: 130px;
 }
 
-.form__input--select select [name="gender"] {
-    width: 70px;
+.form__input--select select[name="gender"] {
+    width: 80px;
 }
 
-.form__input--select select [name="category_id"] {
+.form__input--select select[name="category_id"] {
     width: 200px;
 }
 

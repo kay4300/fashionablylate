@@ -1,8 +1,8 @@
 /* 全体の基本設定 */
 body {
-    font-family: "Times New Roman", sans-serif;
-    background: #ffffff;
-    color: #bb7e55;
+    font-family: "meiryo", cursive;
+    background: #fff;
+    color: #776654;
     margin: 0;
     padding: 0;
 }
@@ -13,12 +13,12 @@ body {
     padding: 20px 0;
     background: white;
     text-align: center;
-    border-bottom: 1px solid #f2ede9;
+    border-bottom: 1px solid #dcd1c5;
 }
 
 .header__logo {
-    font-family: "Times New Roman", sans-serif;
-    font-size: 15px;
+    font-family: "Times New Roman", serif;
+    font-size: 20px;
     font-weight: 300;
     text-decoration: none;
     letter-spacing: 2px;
@@ -33,7 +33,7 @@ body {
 }
 
 .contact-form__heading h2 {
-    font-family: "Times New Roman", sans-serif;
+    font-family: "Times New Roman", serif;
     text-align: center;
     color: #6b5c52;
     font-size: 28px;
