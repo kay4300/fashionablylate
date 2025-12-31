@@ -95,7 +95,7 @@
 
             <!-- エクスポート -->
             <div class="form__button" style="margin-top: 20px;">
-                <form method="get" action="/admin/export">
+                <form method="post" action="/admin/export">
                     <button class="form__button-submit" type="submit">エクスポート</button>
                 </form>
             </div>

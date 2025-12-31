@@ -28,7 +28,7 @@ class ContactRequest extends FormRequest
             "first_name" => ["required", "string", "max:8"],
             "name" => ["required"],
             "gender" => ["required", "in:1,2,3"],
-            "email" => ["required", "string", "email"],
+            "email" => ["required", "string", "email:rfc,dns", "unique:users,email"],
             "tel1" => ["required", "string", "max:3"],
             "tel2" => ["required", "string", "max:4"],
             "tel3" => ["required", "string", "max:4"],

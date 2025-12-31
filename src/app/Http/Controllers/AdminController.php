@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Date;
+use Symfony\Component\HttpFoundation\StreamedResponse;
 use App\Models\Category;
 use App\Models\Contact;
 
@@ -63,10 +65,18 @@ class AdminController extends Controller
     {
         // !empty()で空文字nullを無視する
         if (!empty($request->keyword)) {
-            $keyword = $request->keyword;
+            // 全角・半角スペースを削除
+            $keyword = preg_replace('/\s+/u', '', $request->keyword);
+            // $keyword = $request->keyword;
             $query->where(function ($q) use ($keyword) {
+                // 姓or名検索
                 $q->where('first_name', 'like', "%{$keyword}%")
                     ->orWhere('last_name', 'like', "%{$keyword}%")
+                    // フルネーム検索
+                    ->orWhereRaw(
+                        "REPLACE(CONCAT(last_name, first_name), '　', '') LIKE ?",
+                        ["%{$keyword}%"]
+                    )
                     ->orWhere('email', 'like', "%{$keyword}%");
             });
         }
@@ -141,4 +151,48 @@ class AdminController extends Controller
 
     //     return $response;
     // }
+    public function export(Request $request)
+    {
+        $query = Contact::query();
+
+        $query = $this->getSearchQuery($request, $query);
+
+        $csvData = $query->get()->toArray();
+
+        $csvHeader = [
+            'id',
+            'category_id',
+            'first_name',
+            'last_name',
+            'gender',
+            'email',
+            'tell',
+            'address',
+            'building',
+            'detail',
+            'created_at',
+            'updated_at'
+        ];
+
+        $response = new StreamedResponse(function () use ($csvHeader, $csvData) {
+            $createCsvFile = fopen('php://output', 'w');
+
+            mb_convert_variables('SJIS-win', 'UTF-8', $csvHeader);
+
+            fputcsv($createCsvFile, $csvHeader);
+
+            foreach ($csvData as $csv) {
+                $csv['created_at'] = Date::make($csv['created_at'])->setTimezone('Asia/Tokyo')->format('Y/m/d H:i:s');
+                $csv['updated_at'] = Date::make($csv['updated_at'])->setTimezone('Asia/Tokyo')->format('Y/m/d H:i:s');
+                fputcsv($createCsvFile, $csv);
+            }
+
+            fclose($createCsvFile);
+        }, 200, [
+            'Content-Type' => 'text/csv',
+            'Content-Disposition' => 'attachment; filename="contacts.csv"',
+        ]);
+
+        return $response;
+    }
 }
