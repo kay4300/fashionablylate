@@ -14,7 +14,7 @@ class AdminController extends Controller
     public function index()
     {
         $categories = Category::all();
-         $contacts = Contact::with('category')->paginate(7);
+        $contacts = Contact::with('category')->paginate(7);
 
         return view('admin', compact('categories', 'contacts'));
     }
@@ -107,50 +107,7 @@ class AdminController extends Controller
         Contact::find($request->id)->delete();
         return redirect('/admin')->with('message', 'データを削除しました');
     }
-    // public function export(Request $request)
-    // {
-    //     $query = Contact::query();
-
-    //     $query = $this->getSearchQuery($request, $query);
-
-    //     $csvData = $query->get()->toArray();
-
-    //     $csvHeader = [
-    //         'id',
-    //         'category_id',
-    //         'first_name',
-    //         'last_name',
-    //         'gender',
-    //         'email',
-    //         'tell',
-    //         'address',
-    //         'building',
-    //         'detail',
-    //         'created_at',
-    //         'updated_at'
-    //     ];
-
-    //     $response = new StreamedResponse(function () use ($csvHeader, $csvData) {
-    //         $createCsvFile = fopen('php://output', 'w');
-
-    //         mb_convert_variables('SJIS-win', 'UTF-8', $csvHeader);
-
-    //         fputcsv($createCsvFile, $csvHeader);
-
-    //         foreach ($csvData as $csv) {
-    //             $csv['created_at'] = Date::make($csv['created_at'])->setTimezone('Asia/Tokyo')->format('Y/m/d H:i:s');
-    //             $csv['updated_at'] = Date::make($csv['updated_at'])->setTimezone('Asia/Tokyo')->format('Y/m/d H:i:s');
-    //             fputcsv($createCsvFile, $csv);
-    //         }
-
-    //         fclose($createCsvFile);
-    //     }, 200, [
-    //         'Content-Type' => 'text/csv',
-    //         'Content-Disposition' => 'attachment; filename="contacts.csv"',
-    //     ]);
-
-    //     return $response;
-    // }
+   
     public function export(Request $request)
     {
         $query = Contact::query();
@@ -162,8 +119,8 @@ class AdminController extends Controller
         $csvHeader = [
             'id',
             'category_id',
-            'first_name',
             'last_name',
+            'first_name',
             'gender',
             'email',
             'tell',
@@ -182,8 +139,12 @@ class AdminController extends Controller
             fputcsv($createCsvFile, $csvHeader);
 
             foreach ($csvData as $csv) {
+                
                 $csv['created_at'] = Date::make($csv['created_at'])->setTimezone('Asia/Tokyo')->format('Y/m/d H:i:s');
                 $csv['updated_at'] = Date::make($csv['updated_at'])->setTimezone('Asia/Tokyo')->format('Y/m/d H:i:s');
+
+                mb_convert_variables('SJIS-win', 'UTF-8', $csv);
+
                 fputcsv($createCsvFile, $csv);
             }
 

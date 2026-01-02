@@ -94,8 +94,9 @@
             </form>
 
             <!-- エクスポート -->
-            <div class="form__button" style="margin-top: 20px;">
+            <div class="form__button-export">
                 <form method="post" action="/admin/export">
+                    @csrf
                     <button class="form__button-submit" type="submit">エクスポート</button>
                 </form>
             </div>
@@ -177,6 +178,11 @@
                     <div class="modal-form__group">
                         <label class="modal-form__label">住所</label>
                         <p>{{ $contact->address }}</p>
+                    </div>
+
+                    <div class="modal-form__group">
+                        <label class="modal-form__label">建物名</label>
+                        <p>{{ $contact->building }}</p>
                     </div>
 
                     <div class="modal-form__group">

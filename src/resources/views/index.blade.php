@@ -33,7 +33,7 @@
                         <span class="form__label--required">*</span>
                     </div>
                     <div class="form__group-content">
-                        <div class="form__input--name">
+                        <div class="form__input form__input--name">
                             <label>
                                 <input type="text" name="last_name" placeholder="山田" value="{{ old('last_name') }}" />
                             </label>
@@ -86,7 +86,7 @@
                         <span class="form__label--required">*</span>
                     </div>
                     <div class="form__group-content">
-                        <div class="form__input--text">
+                        <div class="form__input form__input--text">
                             <input type="email" name="email" placeholder="test@example.com" value="{{ old('email') }}" />
                         </div>
                         <div class="form__error">
@@ -103,7 +103,7 @@
                         <span class="form__label--required">*</span>
                     </div>
                     <div class="form__group-content">
-                        <div class="form__input--tel">
+                        <div class="form__input form__input--tel">
                             <input type="tel" name="tel1" maxlength="3" placeholder="090" value="{{ old('tel1') }}" /> -
                             <input type="tel" name="tel2" maxlength="4" placeholder="1234" value="{{ old('tel2') }}" /> -
                             <input type="tel" name="tel3" maxlength="4" placeholder="5678" value="{{ old('tel3') }}" />
@@ -122,7 +122,7 @@
                         <span class="form__label--required">*</span>
                     </div>
                     <div class="form__group-content">
-                        <div class="form__input--text">
+                        <div class="form__input form__input--text">
                             <input type="text" name="address" placeholder="東京都渋谷区渋谷1-1-1" value="{{ old('address') }}" />
                         </div>
                         <div class="form__error">
@@ -138,7 +138,7 @@
                         <span class="form__label--item">建物名</span>
                     </div>
                     <div class="form__group-content">
-                        <div class="form__input--text">
+                        <div class="form__input form__input--text">
                             <input type="text" name="building" placeholder="入力必須ではありません" value="{{ old('building') }}" />
                         </div>
                     </div>
@@ -150,7 +150,7 @@
                         <span class="form__label--required">*</span>
                     </div>
                     <div class="form__group-content">
-                        <div class="form__input--select">
+                        <div class="form__input form__input--select">
                             <select name="category_id">
                                 <option value="">選択してください</option>
                                 @foreach($categories as $category)

@@ -56,8 +56,3 @@ Route::get('/admin/logout', [AdminController::class, 'logout'])->name('admin.log
 // csvエクスポート
 Route::post('/admin/export', [AdminController::class, 'export'])->name('export');
 
-// ログイン後の管理者画面
-// Route::get('/admin', function () {
-//     $categories = Category::all();
-//     return view('admin');
-// })->name('admin', compact('categories'));
