@@ -107,7 +107,7 @@ class AdminController extends Controller
         Contact::find($request->id)->delete();
         return redirect('/admin')->with('message', 'データを削除しました');
     }
-   
+
     public function export(Request $request)
     {
         $query = Contact::query();
@@ -139,7 +139,7 @@ class AdminController extends Controller
             fputcsv($createCsvFile, $csvHeader);
 
             foreach ($csvData as $csv) {
-                
+
                 $csv['created_at'] = Date::make($csv['created_at'])->setTimezone('Asia/Tokyo')->format('Y/m/d H:i:s');
                 $csv['updated_at'] = Date::make($csv['updated_at'])->setTimezone('Asia/Tokyo')->format('Y/m/d H:i:s');
 
