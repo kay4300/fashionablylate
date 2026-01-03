@@ -17,7 +17,6 @@
                 <h1>FashionablyLate</h1>
             </a>
             <div class="header__admin">
-                <!-- <a href="/logout" class="header__admin-link">logout</a> -->
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
                     <button class="header__admin-link" type="submit">
@@ -129,7 +128,6 @@
                     <td>{{ $contact->category->content ?? '未選択' }}</td>
 
                     <td>
-                        <!-- <a class="detail-button" href="/admin/detail/{{ $contact->id }}">詳細</a> -->
                         <a href="#modal-{{ $contact->id }}" class="detail-button">詳細</a>
 
                     </td>
